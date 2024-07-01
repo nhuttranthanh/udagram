@@ -1,6 +1,6 @@
 branch-defaults:
     master:
-        environment: udagram-env
+        environment: Udagram-env
         group_suffix: null
 # Setting EB deploy artifact to Archive.zip
 deploy:
