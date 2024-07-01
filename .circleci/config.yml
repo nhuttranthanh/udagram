@@ -64,10 +64,15 @@ jobs:
                   # TODO: Install, build, deploy in both apps
                   command: |
                       echo "# TODO: Install, build, deploy in both apps"
-                      npm run frontend:install
-                      npm run frontend:build
-                      npm run api:install
-                      npm run api:build
+                      eb init -p node.js udagram --region us-east-1
+                      eb setenv POSTGRES_HOST=$POSTGRES_HOST
+                      eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+                      eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
+                      eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
+                      eb setenv AWS_BUCKET=$AWS_BUCKET
+                      eb setenv AWS_REGION=$AWS_REGION
+                      eb setenv AWS_PROFILE=$AWS_PROFILE
+                      eb setenv JWT_SECRET=$JWT_SECRET
                       npm run deploy
 
 workflows:
